@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(19, 19, 19);
+    font:  normal 10pt arial;
+    color: white;
+}
+
+h1 {
+    color: white;
+
+}
+
+div#resultado {
+    margin-top: 30pt;
+    font: normal 15pt arial;
+    color: white;
+
+}
+
+ 
+
+
