@@ -1,4 +1,8 @@
+//IMPORTAR
+
 const {pularLinha} = require('./funções')
+
+//CONHECENDO O USUÁRIO
 
 let nome = prompt("Qual o seu nome?")
 let idade = Number(prompt("Qual a sua idade?"))
@@ -33,6 +37,33 @@ pularLinha()
 document.write (`sua idade em semanas é: ${semanas}`)
 pularLinha()
 document.write (`sua idade em dias é: ${dias}`)
+
+//CALCULO DE IMC
+
+const IMC = peso / (altura * altura)
+
+if (IMC <= 18,5) {
+    document.write(`${nome}, seu imc é: ${IMC}, e seu você está muito magro. (magreza)`)
+    }if (IMC >= 18,6 || IMC <= 24,9){
+         document.write(`${nome}, seu imc é: ${IMC}, e seu peso está adequado para sua altura. (normal)`)
+        }if (IMC >= 25 || IMC <= 30) {
+             document.write(`${nome}, seu imc é: ${IMC}, e você está acima do peso. (sobrepeso)`)
+            }
+else{
+    document.write(`${nome}, seu imc é: ${IMC}, e você é obeso. (obesidade)`)
+}
+
+//CRIANDO VARIÁVEIS
+
+const anoAtual = 2023
+let contador = 0
+
+//INFORMANDO IDADE APARTIR DOS ANOS
+
+for (let anoDeNascimento = anoAtual - idade; anoDeNascimento <= anoAtual; anoDeNascimento++, contador++){
+    document.write (`${anoDeNascimento}: ${contador} anos de idade.`)
+}
+
 
 
 
