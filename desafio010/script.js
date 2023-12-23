@@ -1,6 +1,10 @@
-//IMPORTAR
+//FUNÇÃO
 
-const {pularLinha} = require('./funções')
+function pularLinha(){
+    document.write("<br>")
+}
+//const {pularLinha} = require('./funcoes')
+
 
 //CONHECENDO O USUÁRIO
 
@@ -40,7 +44,7 @@ document.write (`sua idade em dias é: ${dias}`)
 
 //CALCULO DE IMC
 
-const IMC = peso / (altura * altura)
+const IMC = peso / (altura * altura) //FORMATAR O VALOR PRA: EX: 18,5 OU 26,8. TA SAINDO ASSIM: 0.0020515086478979927
 
 if (IMC <= 18,5) {
     document.write(`${nome}, seu imc é: ${IMC}, e seu você está muito magro. (magreza)`)
