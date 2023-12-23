@@ -66,7 +66,9 @@ let contador = 0
 
 for (let anoDeNascimento = anoAtual - idade; anoDeNascimento <= anoAtual; anoDeNascimento++, contador++){
     document.write (`${anoDeNascimento}: ${contador} anos de idade.`)
-}
+}//ESSE CÓDIGO JA TA FUNCIONANDO
+
+//ADICIONAR WHILE E DO WHILE PRA SABER SE QUER INSERIR NOVOS DADOS OU SE DESEJA FINALIZAR O PROGRAMA
 
 
 
