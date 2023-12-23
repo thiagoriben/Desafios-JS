@@ -8,11 +8,14 @@ function pularLinha(){
 
 //CONHECENDO O USUÁRIO
 
-let nome = prompt("Qual o seu nome?")
-let idade = Number(prompt("Qual a sua idade?"))
-let peso = Number(prompt("Qual o seu peso?"))
-let altura = Number(prompt("Qual a sua altura?"))
-let profissao = prompt("Qual a sua profissão?")
+let nome = String(prompt("Qual o seu nome?"))
+let idade = parseInt(prompt("Qual a sua idade?"))
+let peso = parseFloat(prompt("Qual o seu peso?"))
+let alturaSemPonto = parseFloat(prompt("Qual a sua altura?"))
+let profissao = String(prompt("Qual a sua profissão?"))
+
+const altura = parseFloat(alturaSemPonto.toFixed())
+
 
 document.write (`Olá, ${nome}! você tem ${idade} anos, é ${profissao}, tem ${altura}M de altura e pesa ${peso}kg.`)
 
@@ -42,20 +45,28 @@ document.write (`sua idade em semanas é: ${semanas}`)
 pularLinha()
 document.write (`sua idade em dias é: ${dias}`)
 
+pularLinha()
+pularLinha()
+
 //CALCULO DE IMC
 
-const IMC = peso / (altura * altura) //FORMATAR O VALOR PRA: EX: 18,5 OU 26,8. TA SAINDO ASSIM: 0.0020515086478979927
+const IMCdesformatado = peso / (altura * altura) //FORMATAR O VALOR PRA: EX: 18,5 OU 26,8. TA SAINDO ASSIM: 0.0020515086478979927
 
-if (IMC <= 18,5) {
+const IMC = IMCdesformatado.toFixed(1)
+
+if (IMC < 18,5) {
     document.write(`${nome}, seu imc é: ${IMC}, e seu você está muito magro. (magreza)`)
-    }if (IMC >= 18,6 || IMC <= 24,9){
+    }else if (IMC > 18,5 && IMC < 24,9){
          document.write(`${nome}, seu imc é: ${IMC}, e seu peso está adequado para sua altura. (normal)`)
-        }if (IMC >= 25 || IMC <= 30) {
+        }else if (IMC > 25 && IMC < 30) {
              document.write(`${nome}, seu imc é: ${IMC}, e você está acima do peso. (sobrepeso)`)
             }
 else{
     document.write(`${nome}, seu imc é: ${IMC}, e você é obeso. (obesidade)`)
 }
+
+pularLinha()
+pularLinha()
 
 //CRIANDO VARIÁVEIS
 
@@ -65,10 +76,24 @@ let contador = 0
 //INFORMANDO IDADE APARTIR DOS ANOS
 
 for (let anoDeNascimento = anoAtual - idade; anoDeNascimento <= anoAtual; anoDeNascimento++, contador++){
-    document.write (`${anoDeNascimento}: ${contador} anos de idade.`)
-}//ESSE CÓDIGO JA TA FUNCIONANDO
+    document.write (`${anoDeNascimento}: ${contador} anos de idade.<br>`)
+}
 
-//ADICIONAR WHILE E DO WHILE PRA SABER SE QUER INSERIR NOVOS DADOS OU SE DESEJA FINALIZAR O PROGRAMA
+pularLinha()
+pularLinha()
+
+//PERGUNTAR SE QUER CONTINUAR OU FINALIZAR O PROGRAMA
+
+let continuar;
+
+do {
+  const resposta = prompt('Deseja inserir novos dados? (s/n): ');
+  
+  continuar = resposta.toLowerCase() === 's';
+} while (continuar);
+
+document.write('Programa finalizado.');
+
 
 //ADIOCIONAR QUEBRA DE LINHA COM FUNÇÃO, E TENTAR IMPLEMENTAR O funcoes.js NO HTML
 
