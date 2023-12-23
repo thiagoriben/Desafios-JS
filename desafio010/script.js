@@ -1,3 +1,5 @@
+const {pularLinha} = require('./funções')
+
 let nome = prompt("Qual o seu nome?")
 let idade = Number(prompt("Qual a sua idade?"))
 let peso = Number(prompt("Qual o seu peso?"))
@@ -32,8 +34,5 @@ document.write (`sua idade em semanas é: ${semanas}`)
 pularLinha()
 document.write (`sua idade em dias é: ${dias}`)
 
-//FUNÇÃO DE PULAR LINHA
 
-function pularLinha() {
-    document.write ("<br>")
-}
+
