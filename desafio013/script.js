@@ -1,13 +1,25 @@
-let numerosRecebidos = []
-let posicaoDoArray = 0
+let numeros = [] 
+let indiceArray = 0
+let novoNumero = true
 
-let quantidade = prompt('quantos números você deseja inserir?')
+while (novoNumero === true){
+    // convertendo em inteiro
+    let addNumero = prompt('Insira um número inteiro e positivo.')
+    addNumero = parseInt(addNumero) 
 
-for (let c1 = 0; c1 < quantidade; c1++ ){
-    var valorInserido = Number(prompt('preencha o array: ' + c1))
-    posicaoDoArray ++
-}
+    // Verificando se o número é válido (inteiro e positivo)
+    if (!isNaN(addNumero) && addNumero > 0 && Number.isInteger(addNumero)){
+    numeros[indiceArray] = addNumero 
+    indiceArray++
 
-numerosRecebidos [posicaoDoArray] = valorInserido
+    // Se o número inserido não for válido, pede para inserir novamente
+    }else {alert('Por favor, insira um número inteiro e positivo.')}
+    
+    
+    let continuar = prompt('Você deseja continuar? (S/N)')
+        if(continuar.toUpperCase() !== "S"){
+            novoNumero = false
+        }
+    }
 
-console.log (numerosRecebidos)
+console.log(numeros)
