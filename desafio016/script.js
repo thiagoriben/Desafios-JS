@@ -20,11 +20,23 @@ while (repetir === true) {
         case "2":
             alert("Você escolheu fazer login!")
             
+            function procurarLoginSenha (elemento1) {
+                return arrayUsuario.includes && arraySenha.includes (elemento1);
+            }
+            
+            if (procurarLogin(arrayUsuario) && procurarSenha(arraySenha)) {
+                console.log("O login existe!")
+                alert("Login feito com sucesso!")
+            }else{
+                alert("As informações não foram encontradas. Tente Novamente.")
+            }
+
+
             break;
         
         
         case "3":
-            alert("Você escolheu fazer login!")
+            alert("Você escolheu excluir um cadastro!")
                 
             break;
     
@@ -37,3 +49,8 @@ while (repetir === true) {
 }
 
 console.log(arraySenha, arrayUsuario)
+
+
+function excluirUsuarioSenha (){
+    
+}
