@@ -39,7 +39,22 @@ while (repetir === true) {
         
         case "3":
             alert("Você escolheu excluir um cadastro!")
+            let usuarioExcluir = prompt("Digite o nome do usuário que deseja excluir.")
+                function excluirUsuarioSenha(usuarioExcluir) {
+                    procurarLoginSenha(usuarioExcluir)
+                }if (usuarioExcluir.includes(arrayUsuario)) {
+                    arrayUsuario[index]
+                    arraySenha[index]
+                    alert("Usuário excluído com sucesso.")
+                    return true
+                }else{
+                    alert("Falha na exclusão.")
+                    return false
+                }
                 
+                
+
+
             break;
     
 
@@ -51,8 +66,3 @@ while (repetir === true) {
 }
 
 console.log(arraySenha, arrayUsuario)
-
-
-function excluirUsuarioSenha (){
-    
-}
