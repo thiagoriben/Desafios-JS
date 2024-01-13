@@ -18,19 +18,21 @@ while (repetir === true) {
             break;
 
         case "2":
+            function procurarLoginSenha (usuario, senha) {
+                return arrayUsuario.includes(usuario) && arraySenha.includes (senha);
+            }
             alert("Você escolheu fazer login!")
             
-            function procurarLoginSenha (elemento1) {
-                return arrayUsuario.includes && arraySenha.includes (elemento1);
-            }
+            let usuarioLogin = prompt("Digite o usuário.")
+            let senhaLogin = prompt("Digite a senha.")
             
-            if (procurarLogin(arrayUsuario) && procurarSenha(arraySenha)) {
-                console.log("O login existe!")
+            if (procurarLoginSenha(usuarioLogin, senhaLogin)) {
+                console.log("O login existe.")
                 alert("Login feito com sucesso!")
             }else{
+                console.log("O login NÃO existe.")
                 alert("As informações não foram encontradas. Tente Novamente.")
             }
-
 
             break;
         
