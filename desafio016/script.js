@@ -42,14 +42,17 @@ while (repetir === true) {
             let usuarioExcluir = prompt("Digite o nome do usuário que deseja excluir.")
                 function excluirUsuarioSenha(usuarioExcluir) {
                     procurarLoginSenha(usuarioExcluir)
+                    arrayUsuario.indexOf(usuarioExcluir)
+
                 }if (usuarioExcluir.includes(arrayUsuario)) {
-                    arrayUsuario[index]
-                    arraySenha[index]
+                    arrayUsuario.splice(usuarioExcluir)
+                    let indexExcluirSenha = arrayUsuario.indexOf(usuarioExcluir)
+                    arraySenha.splice(indexExcluirSenha)
                     alert("Usuário excluído com sucesso.")
-                    return true
+                    
                 }else{
                     alert("Falha na exclusão.")
-                    return false
+                    
                 }
                 
                 
