@@ -8,7 +8,7 @@ while (repetir === true) {
 
     switch (pergunta) {
         case "1":
-            alert("Você escolheu se cadastrar!")
+           // alert("Você escolheu se cadastrar!")
             let usuario = prompt("Insira o seu usuario.")   
             arrayUsuario[index] = usuario 
             let senha = prompt("Insira a sua senha.")    
@@ -42,12 +42,13 @@ while (repetir === true) {
             let usuarioExcluir = prompt("Digite o nome do usuário que deseja excluir.")
                 function excluirUsuarioSenha(usuarioExcluir) {
                     procurarLoginSenha(usuarioExcluir)
-                    arrayUsuario.indexOf(usuarioExcluir)
-
-                }if (usuarioExcluir.includes(arrayUsuario)) {
-                    arrayUsuario.splice(usuarioExcluir)
-                    let indexExcluirSenha = arrayUsuario.indexOf(usuarioExcluir)
-                    arraySenha.splice(indexExcluirSenha)
+ 
+                }
+                 //se tiver -1 no index, ele vai excluir 1 elemento de usuario e
+                let indexExcluirUsuario = arrayUsuario.indexOf(usuarioExcluir)
+                if (indexExcluirUsuario !== -1) {
+                    arrayUsuario.splice(indexExcluirUsuario, 1)
+                    arraySenha.splice(indexExcluirUsuario, 1)
                     alert("Usuário excluído com sucesso.")
                     
                 }else{
@@ -60,12 +61,15 @@ while (repetir === true) {
 
             break;
     
-
-        default:
+        case "4":
             alert("Você escolheu encerrar o programa.")
             repetir = false
+            break;
+
+        default:
+            alert("Opção inválida. Tente novamente.")
             break;
     }
 }
 
-console.log(arraySenha, arrayUsuario)
+console.log(arrayUsuario, arraySenha)
