@@ -41,7 +41,7 @@ while (repetir === true) {
             alert("Você escolheu excluir um cadastro!")
             let usuarioExcluir = prompt("Digite o nome do usuário que deseja excluir.")
                 function excluirUsuarioSenha(usuarioExcluir) {
-                    procurarLoginSenha(usuarioExcluir)
+                    procurarLoginSenha(usuarioExcluir)// melhorar isso (funções aninhadas)
  
                 }
                  //se tiver -1 no index, ele vai excluir 1 elemento de usuario e
