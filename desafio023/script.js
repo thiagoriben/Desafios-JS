@@ -40,16 +40,33 @@ function cadastrarHotel() {
 }
 //função para cadastrar reserva
 function cadastrarReserva() {
-    let nomeResponsável = prompt("Digite o nome do responsável.")
-    let diaEntrada = parseInt(prompt("qual o dia da entrada."))
-    let diaSaída = prompt("qual o dia de saída.")
+    let idHotel
+    let existe = false
 
-    //criando objeto da reserva
-    const objReserva = new Reserva(idReserva, idHotel, nomeResponsável, diaEntrada, diaSaída)
+    do {
+        idHotel = parseInt(prompt("Digite o id do hotel."))
+        for (let i = 0; i < arrayHoteis.length; i++)
+            if (idHotel == arrayHoteis[i].id) {
+                i = arrayHoteis.length
+                existe = true
+            } else if(i == arrayHoteis.length - 1){
+                console.log("Hotel não cadastrado")
+            }
+        
+    } while (!existe);
+
+    let nomeResponsável = prompt("digite o nome do responsável")
+    let diaEntrada = prompt("digite o dia da entrada")
+    let diaSaída
+    do {
+        diaSaída = parseFloat(prompt("digite o dia de saída"))
+        if (diaSaída < diaEntrada) {
+            console.log("O dia de saida deve ser maior que o dia de entrada.")
+        }
+    } while (diaSaída < diaEntrada);
+
+    let reserva = new Reserva(id, idDoHotel, nomeResponsável, diaEntrada, diaSaída)
     idReserva++
-}
+    arrayReservas.push(reserva)
 
-function exibirReservasDoHotel(idHotel) {
-    let pIdExibir = parseInt(prompt("Digite o id do hotel para ver as reservas ja feitas."))
-    console.log(pIdExibir)
 }
