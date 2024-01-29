@@ -27,8 +27,6 @@ class Reserva {
     }
 }
 
-const objReserva = new Reserva(idReserva, idHotel, nome, diaEntrada, diaSaída)
-
 //função para cadastrar hotel
 function cadastrarHotel() {
     let nome = prompt("Digite o nome do hotel.")
@@ -39,6 +37,16 @@ function cadastrarHotel() {
     //criando objeto de hotel
     const objHotel = new Hotel(idHotel, nome, categoria, endereço, numeroTelefone)
     idHotel++
+}
+//função para cadastrar reserva
+function cadastrarReserva() {
+    let nomeResponsável = prompt("Digite o nome do responsável.")
+    let diaEntrada = parseInt(prompt("qual o dia da entrada."))
+    let diaSaída = prompt("qual o dia de saída.")
+
+    //criando objeto da reserva
+    const objReserva = new Reserva(idReserva, idHotel, nomeResponsável, diaEntrada, diaSaída)
+    idReserva++
 }
 
 function exibirReservasDoHotel(idHotel) {
